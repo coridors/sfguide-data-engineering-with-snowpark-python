@@ -1,8 +1,8 @@
 #------------------------------------------------------------------------------
 # Hands-On Lab: Data Engineering with Snowpark
-# Script:       05_fahrenheit_to_celsius_udf/app.py
-# Author:       Jeremiah Hansen, Caleb Baechtold
-# Last Updated: 1/9/2023
+# Script:       05_celsius_to_fahrenheit/app.py
+# Author:       Kunal Bhatia
+# Last Updated: 12/27/2023
 #------------------------------------------------------------------------------
 
 # SNOWFLAKE ADVANTAGE: Snowpark Python programmability
@@ -10,10 +10,10 @@
 # SNOWFLAKE ADVANTAGE: SnowCLI (PuPr)
 
 import sys
-from scipy.constants import convert_temperature
 
 def main(temp_f: float) -> float:
-    return convert_temperature(float(temp_f), 'F', 'C')
+    return ((float(temp_f) * (9/5)) + 32)
+
 
 # For local debugging
 # Be aware you may need to type-convert arguments if you add input parameters
